@@ -1,85 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plataformas de straming</title>
-<!-- BASICOS ************************************************************************** -->
-    <script src="https://kit.fontawesome.com/ed17f46158.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="stilos.css">
-<!-- BASICOS ************************************************************************** -->
-</head>
-<body>
-
+    <!-- BASICOS ************************************************************************** -->
+    <script
+      src="https://kit.fontawesome.com/ed17f46158.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="stilos.css" />
+    <!-- BASICOS ************************************************************************** -->
+  </head>
+  <body>
     <header class="header">
-        <h1 class="header__titulo">¿Las plataformas de streaming una bendición?</h1>
+      <h1 class="header__titulo">
+        ¿Las plataformas de streaming una bendición?
+      </h1>
     </header>
 
     <main class="tarjeta__contenedor">
+      <div class="tarjeta__contenedor-pelis">
+        <label for="inputPelis" class="tarjeta__label"
+          >¿Cuantas pelis ves al mes en cine?</label
+        >
+        <input
+          type="number"
+          placeholder="🎬Pelis"
+          id="inputPelis"
+          class="tarjeta__input"
+        />
+        <p id="avisoPeliculas" class="tarjeta__aviso"></p>
+      </div>
 
-        <div class="tarjeta__contenedor-pelis">
-            <label for="inputPelis" class="tarjeta__label">¿Cuantas pelis ves al mes?</label>
-            <input type="number" placeholder="🎬Pelis" id="inputPelis" class="tarjeta__input">
-            <p id="avisoPeliculas" class="tarjeta__aviso"></p>
-        </div>
+      <h2 class="tarjeta__titulo-seleccion">
+        ¡Selecciona tus plataformas de straming indispensables!
+      </h2>
 
+      <div class="tarjeta__checks">
+        <input type="checkbox" id="amazon-prime" />
+        <label for="amazon-prime"><strong>Amazon Prime -</strong> $4 USD</label
+        ><br />
 
-        <h2 class="tarjeta__titulo-seleccion">¡Selecciona tus plataformas de straming indispensables!</h2>
-        
-        <div class="tarjeta__checks">
-            <input type="checkbox" id="amazon-prime">
-            <label for="amazon-prime"><strong>Amazon Prime -</strong> $4 USD</label><br>
+        <input type="checkbox" id="aple-tv" />
+        <label for="aple-tv"><strong>Aple TV + -</strong> $6 USD</label><br />
 
-            <input type="checkbox" id="aple-tv">
-            <label for="aple-tv"><strong>Aple TV + -</strong> $6 USD</label><br>
-            
-            <input type="checkbox" id="disney">
-            <label for="disney"><strong>Disney + -</strong> $8 USD</label><br>
+        <input type="checkbox" id="disney" />
+        <label for="disney"><strong>Disney + -</strong> $8 USD</label><br />
 
-            <input type="checkbox" id="hbo">
-            <label for="hbo"><strong>HBO -</strong> $7 USD</label><br>
+        <input type="checkbox" id="hbo" />
+        <label for="hbo"><strong>HBO -</strong> $7 USD</label><br />
 
-            <input type="checkbox" id="netflix">
-            <label for="netflix"><strong>Netflix -</strong> $9 USD</label><br>
+        <input type="checkbox" id="netflix" />
+        <label for="netflix"><strong>Netflix -</strong> $9 USD</label><br />
 
-            <input type="checkbox" id="youtube">
-            <label for="youtube"><strong>Youtube Premium -</strong> $13 USD</label><br><br>
-        </div>
+        <input type="checkbox" id="youtube" />
+        <label for="youtube"><strong>Youtube Premium -</strong> $13 USD</label
+        ><br /><br />
+      </div>
 
-        <div class="tarjeta__contenedor-boton">
-            <button onclick="calcular()" class="tarjeta__boton">Calcular</button>
-        </div>
+      <div class="tarjeta__contenedor-boton">
+        <button onclick="calcular()" class="tarjeta__boton">Calcular</button>
+      </div>
 
-        <div class="tarjeta__analisis">
-            <h2 id="analisis" class="tarjeta__analisis-titulo"></h2>
-            <p id="analisis_parrafo" class="tarjeta__analisis-texto"></p>
-        </div>
+      <div class="tarjeta__analisis" id="analisis"></div>
     </main>
 
-<!-- FOOTER ****************************************************************************** -->
+    <!-- FOOTER ****************************************************************************** -->
     <footer class="footer">
-        <section class="footer__redes-cont">
-            <a target="_blank" href="https://www.linkedin.com/in/diego-javier-arteaga-valencia-582589218/" class="footer__redes-link">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a target="_blank" href="https://www.instagram.com/diego_arteaga_valencia/?hl=es"class="footer__redes-link">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a target="_blank" href="https://twitter.com/DiegoArteagaV"class="footer__redes-link">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a target="_blank" href="https://github.com/diegoarteag95"class="footer__redes-link">
-                <i class="fab fa-github"></i>
-            </a>
-        </section>
-        <section class="footer__texto-cont">
-            <p class="footer__texto-p">Taller Plataformas de Streaming - Realizado por 👾 DiegoArteaga95</p>
-        </section>
+      <section class="footer__redes-cont">
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/diego-javier-arteaga-valencia-582589218/"
+          class="footer__redes-link"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.instagram.com/diego_arteaga_valencia/?hl=es"
+          class="footer__redes-link"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://twitter.com/DiegoArteagaV"
+          class="footer__redes-link"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://github.com/diegoarteag95"
+          class="footer__redes-link"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </section>
+      <section class="footer__texto-cont">
+        <p class="footer__texto-p">
+          Taller Plataformas de Streaming - Realizado por 👾 DiegoArteaga95
+        </p>
+      </section>
     </footer>
-<!-- FOOTER FIN ************************************************************************** -->
-
+    <!-- FOOTER FIN ************************************************************************** -->
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

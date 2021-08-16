@@ -1,159 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
-*{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-body{
-    background: radial-gradient(50% 50% at 50% 50%, #536976 0%, #292E49 100%);
-    min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.header{
-    background-color: #292E49;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.header__titulo{
-    color: #ffffff;
-    font-size: 28px;
-    text-shadow: 0 0 10px #D7D7D9;
-    text-align: center;
+body {
+  background: radial-gradient(50% 50% at 50% 50%, #536976 0%, #292e49 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.tarjeta__contenedor{
-    background-color: rgba(0, 0, 0, 0.445);
-    width: 400px;
-    margin: 15px 0px;
-    padding: 20px 20px;
-    border: 3px #D7D7D9 solid;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 10px #D7D7D9;
-    border-radius: 15px;
+.header {
+  background-color: #292e49;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.header__titulo {
+  color: #ffffff;
+  font-size: 36px;
+  text-shadow: 0 0 5px #d7d7d9;
+  text-align: center;
+  -webkit-text-stroke: 2px black;
 }
 
-
-.tarjeta__contenedor-pelis{
-    width: 100%;
-    padding-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.tarjeta__label{
-    margin-top: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-.tarjeta__input{
-    border: 5px solid #ffffff;
-    border-radius: 5px; 
-    text-align: center;
-    margin-bottom: 5px;
-}
-.tarjeta__input:placeholder-shown{
-    color: black;
-    text-align: center;
+.tarjeta__contenedor {
+  background-color: rgba(0, 0, 0, 0.445);
+  width: 400px;
+  margin: 15px 0px;
+  padding: 20px 20px;
+  border: 3px #d7d7d9 solid;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px #d7d7d9;
+  border-radius: 15px;
 }
 
-.tarjeta__aviso{
-    color: rgb(177, 18, 18);
-    text-shadow: 0 0 1px #000000;
-    font-size: 12px;
-    font-weight: bold;
+.tarjeta__contenedor-pelis {
+  width: 100%;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tarjeta__label {
+  margin-top: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.tarjeta__input {
+  border: 5px solid #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.tarjeta__input:placeholder-shown {
+  color: black;
+  text-align: center;
 }
 
-.tarjeta__titulo-seleccion{
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    text-align: center;
-    padding: 5px 0;
-    font-weight: bold;
+.tarjeta__aviso {
+  border-radius: 3px;
+  background-color: tomato;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 1px #000000;
+  font-size: 12px;
+  font-weight: bold;
 }
-.tarjeta__checks{
-    padding: 10px 10px;
+
+.tarjeta__titulo-seleccion {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-align: center;
+  padding: 5px 0;
+  font-weight: bold;
 }
-.tarjeta__checks label{
-    margin-left: 5px;
-    color: white;
-    font-size: 18px;
+.tarjeta__checks {
+  padding: 10px 10px;
 }
-.tarjeta__contenedor-boton{
-    display: flex;
-    justify-content: center;
+.tarjeta__checks label {
+  margin-left: 5px;
+  color: white;
+  font-size: 18px;
 }
-.tarjeta__boton{
-    width: 50%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    cursor: pointer;
-    border: 1px rgb(0, 0, 0) solid;
-    font-size: 16px;
-    font-weight: bold;
+.tarjeta__contenedor-boton {
+  display: flex;
+  justify-content: center;
 }
-.tarjeta__boton:hover{
-    box-shadow: 0 0 20px #ffffff;
+.tarjeta__boton {
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px rgb(0, 0, 0) solid;
+  font-size: 16px;
+  font-weight: bold;
 }
-.tarjeta__analisis-titulo{
-    color: white;
-    text-align: center;
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 20px;
+.tarjeta__boton:hover {
+  box-shadow: 0 0 20px #ffffff;
 }
-.tarjeta__analisis-texto{
-    margin-top: 5px;
-    color: rgb(225, 248, 97);
-    font-weight: bold;
-    text-align: center;
-    font-size: 14px;
+.tarjeta__analisis h2 {
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 26px;
+}
+.tarjeta__analisis h2 {
+  border-top: 3px white solid;
+  text-shadow: 0 0 4px #d7d7d9;
+  font-size: 30px;
+}
+.tarjeta__analisis p {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.tarjeta__analisis-cost {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 4px #ff0022;
+  font-size: 17px;
 }
 
 /* FOOTER ------------------------------------------------------------------------- */
-.footer{
-    background-color: #292E49;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end;
+.footer {
+  background-color: #292e49;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
 }
-.footer__redes-link{
-    text-decoration: none;
-    color: #D7D7D9;
-    font-size: 18px;
-    margin: 0 3px;
+.footer__redes-link {
+  text-decoration: none;
+  color: #d7d7d9;
+  font-size: 18px;
+  margin: 0 3px;
 }
-.footer__redes-link:hover{
-    color: #536976;
+.footer__redes-link:hover {
+  color: #536976;
 }
 
-.footer__texto-p{
-    color: #D7D7D9;
-    font-size: 12px;
+.footer__texto-p {
+  color: #d7d7d9;
+  font-size: 12px;
 }
 /* FOOTER FIN --------------------------------------------------------------------- */
-@media (max-width: 768px){
-    .footer{
-        height: 70px;
-    }
-    .footer__texto-p{
-        font-size: 14px;
-        text-align: center;
-    }
-    .tarjeta__contenedor{
-        width: 350px;
-    }
+@media (max-width: 768px) {
+  .footer {
+    height: 70px;
+  }
+  .footer__texto-p {
+    font-size: 14px;
+    text-align: center;
+  }
+  .tarjeta__contenedor {
+    width: 350px;
+  }
 }

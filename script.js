@@ -1,103 +1,109 @@
-//array plataformas streaming ***********************************************
-const plataformasStreaming = []; 
+// VARIABLES
+const listStreaming = [];
 
-//funcion vaciar array ******************************************************
-function vaciarArray(array){
-    array.splice(0,array.length);
-}
+// GENERAR LISTA SEGUN CHECK
+function createList(listaOfGenerate) {
+  const checkAmazon = document.getElementById(`amazon-prime`);
+  const checkAple = document.getElementById(`aple-tv`);
+  const checkDisney = document.getElementById(`disney`);
+  const checkHbo = document.getElementById(`hbo`);
+  const checkNetflix = document.getElementById(`netflix`);
+  const checkYoutube = document.getElementById(`youtube`);
 
-//funcion verificar check ***************************************************
-function funAmazon(array){
-    const check = document.getElementById(`amazon-prime`);
-    if(check.checked === true){
-        array.push({name: `Amazon Prime`,cost: 4});
-    }
-}
-function funAple(array){
-    const check = document.getElementById(`aple-tv`);
-    if(check.checked === true){
-        array.push({name: `Aple TV`,cost: 6});
-    }
-}
-function funDisney(array){
-    const check = document.getElementById(`disney`);
-    if(check.checked === true){
-        array.push({name: `Disney +`,cost: 8});
-    }
-}
-function funHbo(array){
-    const check = document.getElementById(`hbo`);
-    if(check.checked === true){
-        array.push({name: `HBO`,cost: 7});
-    }
-}
-function funNetflix(array){
-    const check = document.getElementById(`netflix`);
-    if(check.checked === true){
-        array.push({name: `Netflix`,cost: 9});
-    }
-}
-function funYoutube(array){
-    const check = document.getElementById(`youtube`);
-    if(check.checked === true){
-        array.push({name: `Youtube Premium`,cost: 13});
-    }
+  if (checkAmazon.checked)
+    listaOfGenerate.push({ name: `Amazon Prime`, cost: 4 });
+
+  if (checkAple.checked) listaOfGenerate.push({ name: `Aple TV`, cost: 6 });
+
+  if (checkDisney.checked) listaOfGenerate.push({ name: `Disney +`, cost: 8 });
+
+  if (checkHbo.checked) listaOfGenerate.push({ name: `HBO`, cost: 7 });
+
+  if (checkNetflix.checked) listaOfGenerate.push({ name: `Netflix`, cost: 9 });
+
+  if (checkYoutube.checked)
+    listaOfGenerate.push({ name: `Youtube Premium`, cost: 13 });
 }
 
-//generar array user segun check ********************************************
-function generarListaUser(){
-    vaciarArray(plataformasStreaming);
-    funAmazon(plataformasStreaming);
-    funAple(plataformasStreaming);
-    funDisney(plataformasStreaming);
-    funHbo(plataformasStreaming);
-    funNetflix(plataformasStreaming);
-    funYoutube(plataformasStreaming);
+// CLEAR LIST
+function cleanList(listaForClear) {
+  listaForClear.splice(0, listaForClear.length);
 }
 
-//funcion sumar costo total plataforma **************************************
-function sumaCostoPlataformas(){
-    costoPlataformas = plataformasStreaming.map(x => x.cost);
-    totalCostoPlataformas = costoPlataformas.reduce((a,e)=> a+e)
-    return totalCostoPlataformas;
+// CLEAN ANALISIS
+function cleanAnalisis() {
+  document.getElementById(`avisoPeliculas`).innerHTML = ``;
 }
 
-//calcular si cine es mas caro que streming *********************************
-function comparacionCostos() {
-    const inputPelis = document.getElementById(`inputPelis`);
-    limpiarResultado()
-    document.getElementById(`analisis`).innerText = `Analisis`;
-    document.getElementById(`analisis_parrafo`).innerText = `Gastas apx $${inputPelis.value*4} USD cada mes en cine, en plataformas gastas $${totalCostoPlataformas} USD. Las plataformas son una bendición ya que puedes acceder a miles de películas y series cuando quieras, pero no dejes de ir a cine de vez en cuando ya que es una experiencia mágica 🎥`;
-}
-//limpiar resultado *********************************************************
-function limpiarResultado(){
-    document.getElementById(`analisis`).innerText = ``;
-    document.getElementById(`analisis_parrafo`).innerText = ``;
+// COSTO TOTAL PLATAFORMAS
+function costStreaming(listForCost) {
+  if (listForCost.length > 0) {
+    const cost = listForCost.map((element) => element.cost);
+    const totalStreaming = cost.reduce(
+      (acumulador, elemento) => acumulador + elemento
+    );
+    return totalStreaming;
+  } else {
+    return (totalStreaming = 0);
+  }
 }
 
-//Calcular resultado ********************************************************
-function calcular(){
-    const inputPelis = document.getElementById(`inputPelis`);
-    if(inputPelis.value){
-        generarListaUser();
-        document.getElementById(`avisoPeliculas`).innerText = ``;
-        if(plataformasStreaming.length>0){
-            sumaCostoPlataformas();
-            comparacionCostos();
-        }else{
-            limpiarResultado()
-            document.getElementById(`analisis`).innerText = `Analisis`;
-            document.getElementById(`analisis_parrafo`).innerText = 
-            `El costo aproximado de de peliculas que ves al mes es de $${inputPelis.value*4} USD estaria bien que le dieras la oportunidad almenos a una plataforma de streaming 😎`;
-        }
-    }else{
-        document.getElementById(`avisoPeliculas`).innerText = `❌Ingresa el aproximado de peliculas que ves❌`;
+// COSTO TOTAL CINE
+function costCine() {
+  const inputCine = document.getElementById(`inputPelis`);
+  document.getElementById(`avisoPeliculas`).innerHTML = ``;
+  if (inputCine.value && inputCine.value > 0) {
+    const totalCine = inputCine.value * 4;
+    return totalCine;
+  } else {
+    document.getElementById(`avisoPeliculas`).innerHTML = `
+    ❌Ingresa el aproximado de peliculas que ves❌
+    `;
+  }
+}
+
+// BOTON CALCULAR - INTERACTIVIDAD PROGRAMA
+function calcular() {
+  costCine();
+  cleanAnalisis();
+  cleanList(listStreaming);
+
+  if (costCine() > 0) {
+    createList(listStreaming);
+    if (listStreaming.length === 0) {
+      document.getElementById("analisis").innerHTML = `
+      <h2>Analisis</h2>
+      <p>
+      Costo de cine <strong class="tarjeta__analisis-cost">$${costCine()} USD</strong>
+      </p>
+      <p>🤍 Arriesgate por una plataforma y descubre cientos de peliculas 🧐</p>
+      `;
+    } else {
+      if (costCine() >= costStreaming(listStreaming)) {
+        document.getElementById("analisis").innerHTML = `
+        <h2>Analisis</h2>
+        <p>
+        Costo de Cine <strong class="tarjeta__analisis-cost">$${costCine()} USD</strong></br>
+        VS</br>
+        Costo de Streaming <strong class="tarjeta__analisis-cost">$${costStreaming(
+          listStreaming
+        )} USD </strong>
+        </p>
+        <p>💚 Las plataformas de streaming son una bendición 💚</p>
+        `;
+      } else {
+        document.getElementById("analisis").innerHTML = `
+        <h2>Analisis</h2>
+        <p>
+        Costo de Cine <strong class="tarjeta__analisis-cost">$${costCine()} USD</strong></br>
+        VS</br>
+        Costo de Streaming <strong class="tarjeta__analisis-cost">$${costStreaming(
+          listStreaming
+        )} USD </strong>
+        </p>
+        <p>🤯 Eres adico a las plataformas _ esta bien ver pelis _ pero esta mejor estudiar en platzi 🤩</p>
+        `;
+      }
     }
+  }
 }
-
-generarListaUser();
-    if(plataformasStreaming.length>0){
-        sumaCostoPlataformas();
-        comparacionCostos();
-    }else{
-    }
